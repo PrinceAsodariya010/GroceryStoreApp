@@ -1,0 +1,21 @@
+@model List<GroceryStoreApp.Models.CartItem>
+
+<h2>Your Cart</h2>
+
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Product.Name</td>
+            <td>Qty: @item.Quantity</td>
+            <td>Price: ₹@item.Product.Price</td>
+        </tr>
+    }
+</table>
+<a asp-controller="Products" asp-action="List" class="btn btn-outline-primary me-2">
+    Continue Shopping 🛍️
+</a>
+<a asp-controller="Cart" asp-action="Checkout" class="btn btn-success">
+    Checkout 💳
+</a>
+

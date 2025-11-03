@@ -1,0 +1,23 @@
+@model GroceryStoreApp.Models.Customer
+
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<h2>Checkout</h2>
+<hr />
+
+<form method="post" asp-action="PlaceOrder">
+    <div class="mb-3">
+        <label>Full Name</label>
+        <input type="text" name="Name" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label>Email (optional)</label>
+        <input type="email" name="Email" class="form-control" />
+    </div>
+
+    <button class="btn btn-success">Place Order ✅</button>
+</form>
+<a asp-controller="Cart" asp-action="Index" class="btn btn-secondary mb-3">⬅️ Back to Cart</a>

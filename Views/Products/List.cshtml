@@ -1,0 +1,14 @@
+@model IEnumerable<GroceryStoreApp.Models.Product>
+
+<h2>Products</h2>
+<div class="row">
+@foreach (var item in Model)
+{
+    <div class="col-md-3 text-center">
+        <img src="@item.ImageUrl" width="120" height="120" /><br />
+        <b>@item.Name</b><br />
+        <span>₹@item.Price</span><br />
+        <a class="btn btn-primary mt-2" href="/Cart/Add/@item.Id">Add to Cart</a>
+    </div>
+}
+</div>
